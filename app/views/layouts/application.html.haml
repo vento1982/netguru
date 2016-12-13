@@ -12,7 +12,9 @@
       = render 'layouts/navigation'
     %main{:role => "main"}
       = render 'layouts/messages'
-      .container
+      .container-fluid
+        %p.notice= notice
+        %p.alert= alert
         .row
           .col-xs-10.col-xs-offset-1
             = breadcrumbs separator: " &raquo; "

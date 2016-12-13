@@ -3,6 +3,7 @@ class TeachersController < ApplicationController
   expose(:teacher, attributes: :teacher_params)
   expose(:teacher_subject_items) { teacher.subject_items }
 
+
   def create
     if teacher.save
       redirect_to teacher_path(teacher), notice: I18n.t('shared.created', resource: 'Teacher')
