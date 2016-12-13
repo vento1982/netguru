@@ -3,6 +3,5 @@ class ReportsController < ApplicationController
 
   def subjects
   end
-
-  private
+  
 end
