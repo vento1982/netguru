@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "students#index"
 
-  get 'subjects', to: 'reports#subjects', as: :subjects
+  get 'reports/subjects', to: 'reports#subjects', as: :report_subjects
   
   devise_for :users
  
@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :teachers
-  resources :visitors ,only: [:index]
+  resources :visitors, only: [:index]
+  
 end
