@@ -5,6 +5,12 @@ class StudentDecorator < BaseDecorator
     "#{first_name} #{last_name}"
   end
 
+  def birth
+    if !student.birthdate.nil?
+      student.birthdate.strftime('%Y-%m %d')
+    end
+  end
+
   def avg_notes(subject_item)
   	@avg_notes = subject_item.subject_item_notes.average(:value)
 
