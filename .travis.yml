@@ -9,3 +9,4 @@ addons:
 test:
   adapter: postgresql
   database: workshops_test
+  
