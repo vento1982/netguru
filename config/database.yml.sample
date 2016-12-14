@@ -13,3 +13,7 @@ development:
 test: &test
   <<: *connection
   database: workshops_test
+
+production:
+  <<: *connection
+  database: workshops_production
