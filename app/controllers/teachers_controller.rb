@@ -1,8 +1,9 @@
 class TeachersController < ApplicationController
+  before_action :authenticate_user!, only: [ :index ]
+  
   expose(:teachers)
   expose(:teacher, attributes: :teacher_params)
   expose(:teacher_subject_items) { teacher.subject_items }
-
 
   def create
     if teacher.save
@@ -28,6 +29,6 @@ class TeachersController < ApplicationController
   private
 
   def teacher_params
-    params.require(:teacher).permit(:first_name, :last_name, :academic_title, subject_item_ids: [])
+    params.require(:teacher).permit(:first_name, :last_name, :academic_title, :subject_item_ids => [])
   end
 end

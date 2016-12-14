@@ -12,7 +12,7 @@ feature 'User visits students page'  do
 
   scenario 'should see students list' do
     within('.breadcrumbs') do
-      expect(page).to have_content 'RoR Workhops » Students'
+      expect(page).to have_content 'RoR Workhops » Student'
     end
 
     expect(page).to have_content 'Jan'
