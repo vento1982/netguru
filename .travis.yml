@@ -1,7 +1,8 @@
 rvm:
   - 2.2.3
 before_script:
-  - cp config/database.yml.travis config/database.yml
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'CREATE USER workshops ;' -U postgres
   - psql -c 'create database workshops_test;' -U postgres
 addons:
   postgresql: '9.3'
@@ -9,4 +10,3 @@ addons:
 test:
   adapter: postgresql
   database: workshops_test
-  
